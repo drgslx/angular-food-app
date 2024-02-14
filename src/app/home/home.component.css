@@ -1,0 +1,42 @@
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+img {
+    border-radius: 1rem;
+}
+
+ul li a {
+    text-decoration: none;
+    height: auto; 
+    width: 20rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+    color: black;
+}
+
+li a:hover{
+    transform: scale(0.9);
+    transition: 0.5s;
+    opacity: 0.7;
+    cursor: pointer;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0.5rem;
+    justify-content: space-between;
+}
