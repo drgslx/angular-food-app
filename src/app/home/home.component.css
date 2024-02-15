@@ -13,9 +13,9 @@ img {
 
 ul li a {
     text-decoration: none;
+    background-color: antiquewhite;
     height: auto; 
     width: 20rem;
-    border: 1px solid whitesmoke;
     border-radius: 1rem;
     margin: 0.5rem;
     padding: 0.5rem;

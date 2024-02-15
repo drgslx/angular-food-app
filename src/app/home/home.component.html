@@ -2,7 +2,7 @@
 <app-tags></app-tags>
 <ul>
     <li *ngFor="let food of foods">
-        <a href=""><img src="{{food.imageUrl}}" alt="">
+        <a routerLink="/food/{{food.id}}"><img src="{{food.imageUrl}}" alt="">
             <div class="content">
                 <h1>{{food.name}}</h1><span class="favorite">{{food.favorite?'&hearts;':''}}</span>
             </div>
