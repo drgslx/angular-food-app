@@ -78,10 +78,6 @@ export class FoodService {
 
 ];
     }
-   getAllFoodByTag(tag:String):Food[]{
-    return tag === "All" ? this.getAll() : 
-                            this.getAll().filter(food => food.tags?.includes(tag));
-   } 
    getAllTags():Tag[]{
     return [
       {name: 'All', count: 6},
@@ -94,12 +90,17 @@ export class FoodService {
       {name: 'Soup', count: 1},
     ]
    }
+
+   getAllFoodByTag(tag:String):Food[]{
+    return tag === "All" ? this.getAll() : 
+                            this.getAll().filter(food => food.tags?.includes(tag));
+   } 
    getAllFoodsBySearchTerm(searchTerm:string):Food[]{
     return this.getAll().filter(food => 
       food.name.toLowerCase().includes(searchTerm.toLowerCase()));
    }
    getFoodById(id:number):Food{
-    return this.getAll().find(food => food.id === id)!
+    return this.getAll().find(food => food.id === id)!;
   }
 
   }

@@ -8,5 +8,8 @@
             <h2>Cooking time:{{food.cookingTime}} minutes</h2>
             <h2>Origin: {{food.origins}}</h2>
         </div>
+        <div class="tags">
+            <app-tags [foodPageTags]="food.tags"></app-tags>
+        </div>
     </div>
 </div>

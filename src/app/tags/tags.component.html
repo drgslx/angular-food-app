@@ -1,3 +1,7 @@
-<div>
-  <a *ngFor="let tag of tags" [routerLink]="['/tag', tag.name]" class="tag">{{tag.name}} ({{tag.count}})</a>
+<div *ngIf="tags">
+  <a *ngFor="let tag of tags" routerLink="['/tag/{{tag.name}}']" class="tag">{{tag.name}} ({{tag.count}})</a>
+</div>
+
+<div *ngIf="foodPageTags">
+  <a *ngFor="let tagName of foodPageTags" routerLink="['/tag/{{tagName}}']" class="tag">{{tagName}}</a>
 </div>

@@ -10,7 +10,7 @@ import { FoodService } from '../services/food/food.service';
 })
 export class FoodPageComponent implements OnInit {
   food!:Food;
-  constructor(private activatedRoute:ActivatedRoute, private foodService:FoodService) {
+  constructor(private activatedRoute:ActivatedRoute, private foodService: FoodService) {
     activatedRoute.params.subscribe(params => {
       if(params['id'])
       this.food = foodService.getFoodById(+params['id']);
