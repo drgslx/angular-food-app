@@ -1,4 +1,6 @@
-<div class="main-flex">
+<app-not-found notFoundMessage= "Your cart is empty!" [visible]="!cart || cart.items.length == 0"></app-not-found>
+
+<div *ngIf="cart && cart.items.length > 0" class="main-flex">
   <ul>
     <li *ngFor="let cartItem of cart.items">
         <div class="container">
