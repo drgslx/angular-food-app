@@ -1,15 +1,25 @@
-<ul>
+<div class="main-flex">
+  <ul>
     <li *ngFor="let cartItem of cart.items">
-      <div>
-        <img src="{{cartItem.food.imageUrl}}" alt="{{cartItem.food.name}}">
-      </div>
-      <div>
-        <a [routerLink]="'/food/'+cartItem.food.id">{{cartItem.food.name}}</a>
-      </div>
-      <div>
-        <select #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)">
-          <option *ngFor="let i of [1,2,3,4,5]">{{i}}</option>
-        </select>
-      </div>
+        <div class="container">
+            <img src="{{cartItem.food.imageUrl}}" alt="{{cartItem.food.name}}">
+            <a [routerLink]="'/food/'+cartItem.food.id">{{cartItem.food.name}}</a>
+            <p>Cooking time: {{cartItem.food.cookingTime}}</p>
+            <p>Select a quantity</p><select #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)">
+            <option *ngFor="let i of [1,2,3,4,5]">{{i}}*</option></select>
+            <p>{{cartItem.price | currency}}</p>
+          <button class="remove-button" (click)="removeFromCart(cartItem)">Remove from cart</button>
+        </div>
     </li>
   </ul>
+
+  <div class="checkout">
+    <h1>Checkout</h1>
+    <p>total items:{{cart.items.length}} </p>
+    <p>total price: {{cart.totalPrice | currency}}</p>
+  
+  </div>
+</div>
+  
+  
+
